@@ -1,0 +1,98 @@
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>User CRUD</title>
+    <link rel="stylesheet" href="css/site.css" />
+</head>
+
+<body>
+    <h1>User CRUD</h1>
+    <h3>Add</h3>
+    <form action="javascript:void(0);" method="POST" onsubmit="addUser()">
+         <input type="text" id="add-Id" placeholder="Enter Id"> 
+        <input type="text" id="add-UserName" placeholder="Enter UserNam" required>
+        <input type="text" id="add-IsAdmin" placeholder="Enter UserType" required>
+        <input type="text" id="add-Password" placeholder="Enter Password" required>
+        <input type="submit" value="Add">
+    </form>
+
+
+
+    <p id="counter"></p>
+
+    <table>
+        <tr>
+            <th>id</th>
+            <th>nameUsers</th>
+            <th>userType</th>
+            <th>password</th>
+            <th>delete</th>
+        </tr>
+        <tbody id="users"></tbody>
+    </table>
+<button><a href="./index.html">Task -></a></button>
+    <script src="js/users.js" asp-append-version="true"></script>
+    <script type="text/javascript">
+        if (!localStorage.getItem('token')) {
+            window.location.href = "signIN.html"
+        }
+        getUsers();
+        
+    </script>
+    
+    <a id="AllUsers" hidden="true" href="./index.html">ALL USERS </a>
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>User CRUD</title>
+    <link rel="stylesheet" href="css/user.css" />
+</head>
+
+<body>
+    <h1>USER CRUD</h1>
+    <div id="editbtnuser">
+        <p id="clickhereuser">To edit your details click here →</p>
+        <button onclick="addUserbtn()">Add User</button>
+        <div id="addUsers">
+            <form action="javascript:void(0);" method="POST" onsubmit="addUser()">
+                <!-- <input type="text" id="add-Id" placeholder="Enter Id"> -->
+                <input type="text" id="add-UserName" placeholder="Enter UserNam" required>
+                <input type="text" id="add-IsAdmin" placeholder="Enter UserType" required>
+                <input type="text" id="add-Password" placeholder="Enter Password" required>
+                <input type="submit" value="Add User">
+            </form>
+        </div>
+    </div>
+
+    <p id="counter"></p>
+
+    <table>
+        <tr>
+            <th>id</th>
+            <th>nameUsers</th>
+            <th>userType</th>
+            <th>password</th>
+            <th>delete</th>
+        </tr>
+        <tbody id="users"></tbody>
+    </table>
+<button><a href="./index.html" id="returnTask">return your task</a></button>
+    <script src="js/users.js" asp-append-version="true"></script>
+    <script type="text/javascript">
+        if (!localStorage.getItem('token')) {
+            window.location.href = "signIN.html"
+        }
+        getUsers();
+    </script>
+    <a id="AllUsers" hidden="true" href="./index.html">ALL USERS</a>
+</body>
+
+</html>

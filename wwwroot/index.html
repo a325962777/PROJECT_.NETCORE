@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Task CRUD</title>
+    <link rel="stylesheet" href="css/site.css" />
+</head>
+
+<body>
+    <h1>TASK CRUD</h1>
+
+    <div id="nameUser"></div>
+    <div id="editbtnuser">
+        <p id="clickhereuser">To edit your details click here →</p>
+
+        <button onclick="editUser()">Edit User</button>
+        <div id="editFormUser">
+            <form action="javascript:void(0);" onsubmit="updateUser()">
+                <input type="hidden" id="edit-Id">
+                <input type="text" id="edit-UserName" placeholder="enter userName">
+                <input type="hidden" id="edit-IsAdmin">
+                <input type="text" id="edit-Password" placeholder="enter password">
+                <input type="submit" value="Save">
+                <a onclick="closeInputUser()" aria-label="Close">&#10006;</a>
+            </form>
+        </div>
+    </div>
+    <div id="editbtnuser">
+    <p id="clickheretask">To add task click here →</p>
+    <button onclick="addTask()">Add Task</button>
+    <div id="addTasks">
+        <form action="javascript:void(0);" method="POST" onsubmit="addItem()">
+            <input type="checkbox" id="add-IsDone">
+            <input type="text" id="add-name" placeholder="New Task">
+            <input type="submit" value="Add">
+        </form>
+    </div>
+</div>
+
+
+    <div id="editForm">
+        <h3>Edit</h3>
+        <form action="javascript:void(0);" onsubmit="updateItem()">
+            <input type="hidden" id="edit-Id">
+            <!-- <input type="hidden" id="edit-UserId"> -->
+            <input type="checkbox" id="edit-IsDone">
+            <input type="text" id="edit-TaskName">
+            <input type="submit" value="Save">
+            <a onclick="closeInput()" aria-label="Close">&#10006;</a>
+        </form>
+    </div>
+
+    <p id="counter"></p>
+
+    <table>
+        <tr>
+            <th>Is Done? </th>
+            <th>taskName</th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tbody id="tasks"></tbody>
+    </table>
+
+    <script src="js/site.js" asp-append-version="true"></script>
+    <script type="text/javascript">
+        if (!localStorage.getItem('token')) {
+            window.location.href = "signIn.html"
+        }
+        getItems();
+    </script>
+    <a id="AllUsers" hidden="true" href="./users.html"> TO ALL USERS, CLICK</a>
+</body>
+
+</html>
